@@ -1,0 +1,65 @@
+<style>
+  .mx-auto button.btn {
+    background-color: #ff385c; /* Airbnb red */
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    border: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .mx-auto button.btn:hover {
+    background-color: #e03150;
+  }
+
+  .mx-auto button.btn:active {
+  transform: scale(0.96);
+  background-color: #c91d42;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2) inset;
+  }
+
+  .mx-auto button.btn i {
+    margin-right: 0.4rem;
+  }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    
+    <!-- Left - Logo + Explore -->
+    <a class="navbar-brand d-flex align-items-center" href="/listings">
+      <i class="fa-regular fa-compass text-danger fs-4 me-2"></i>
+      <span class="fw-medium">Explore</span>
+    </a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+      
+      <!-- Center - Search -->
+      <div class="d-flex mx-auto gap-2">
+        <input type="text" class="form-control rounded-pill px-3" placeholder="Search destinations" style="max-width: 250px;">
+        <button class="btn btn-danger rounded-pill">
+          <i class="fa-solid fa-magnifying-glass me-1"></i> Search
+        </button>
+      </div>
+
+      <!-- Right - Auth Links -->
+      <div class="navbar-nav d-flex align-items-center">
+        <a class="nav-link" href="/listings/new">Become a host</a>
+        <% if (!currUser) { %>
+          <a class="nav-link fw-bold" href="/signup">Sign up</a>
+          <a class="nav-link fw-bold" href="/login">Log in</a>
+        <% } else { %>
+          <a class="nav-link fw-bold" href="/logout">Log out</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
