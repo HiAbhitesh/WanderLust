@@ -1,7 +1,7 @@
 const User = require("../models/user");
 
 module.exports.renderSignupform = (req, res) => {
-    res.render("users/signUp.ejs");
+    res.render("users/signup.ejs");
 };
 
 module.exports.signUp = async(req, res) => {
@@ -19,7 +19,7 @@ module.exports.signUp = async(req, res) => {
         });
     } catch (error) {
         req.flash("error", error.message);
-        res.redirect("/signUp");
+        res.redirect("/signup");
     }
 };
 
